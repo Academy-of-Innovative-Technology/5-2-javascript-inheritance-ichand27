@@ -12,11 +12,13 @@ class Pet {
 }
 
 
-
-
-
-
-
+class Dog extends Pet {
+  constructor(name, breed) {
+   super(name, breed);
+    var text = "<p>Your dog's name is" + this.name + ". The dog's breed is" + this.breed + ".</p>";
+    return text;
+}
+}
 
 
 /* ==== EXERCISE 2 ==== */
@@ -25,9 +27,26 @@ class Person {
   constructor(name, age) {
     this.name = name;
     this.age = age;
-    this.details = function() {
+  }
+  details() {
       let detail = `My name is ${this.name} and I am ${this.age} years old.`;    
     return detail;
     }
-  }
 }
+
+class Student extends Person {
+  constructor(name, age, grade) {
+    super(name, age);
+    this.grade = grade;
+  }
+
+  details(){
+      return ` ${super.details()} and im in ${this.grade}'th grade`;
+    }
+
+}
+
+
+
+let me = new Student("Isis", "16", "11");
+console.log(me.details());
