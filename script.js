@@ -41,12 +41,24 @@ class Student extends Person {
   }
 
   details(){
-      return ` ${super.details()} and im in ${this.grade}'th grade`;
+      return ` ${super.details()} and I'm in ${this.grade}'th grade.`;
     }
 
 }
 
+class Teacher extends Person {
+  constructor(name, age, subject){
+    super(name, age);
+    this.subject = subject;
+  }
+  
+  details(){
+    return ` ${super.details()} and I teach ${this.subject}.`;
+  }
 
+}
 
 let me = new Student("Isis", "16", "11");
-console.log(me.details());
+let teacher = new Teacher('Aaron', '58', 'Web Design');
+
+console.log(me.details(), teacher.details());
